@@ -2035,8 +2035,8 @@ CAmount CWallet::GetMinimumFee(const CMutableTransaction& tx, unsigned int nTxBy
         nFeeNeeded += GetDogecoinDustFee(tx.vout, minTxFee);
     }
     // prevent user from paying a non-sense fee (like 1 satoshi): 0 < fee < minRelayFee
-    if (nFeeNeeded < ::minRelayTxFee.GetFee(nTxBytes))
-        nFeeNeeded = ::minRelayTxFee.GetFee(nTxBytes);
+    //if (nFeeNeeded < ::minRelayTxFee.GetFee(nTxBytes))
+        //nFeeNeeded = ::minRelayTxFee.GetFee(nTxBytes);
     // But always obey the maximum
     if (nFeeNeeded > maxTxFee)
         nFeeNeeded = maxTxFee;
